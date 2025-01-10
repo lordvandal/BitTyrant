@@ -29,10 +29,11 @@ RUN chmod +x /etc/cont-init.d/bittyrant.sh
 # Adjust the openbox config.
 RUN \
     # Maximize only the main/initial window.
-    sed-patch 's/<application type="normal">/<application type="normal" title="BitTyrant">/' \
+    # sed-patch 's/<application type="normal">/<application type="normal" title="BitTyrant">/' \
+    sed-patch '|</application>i|<application name="BitTyrant" class"*" type="normal">'
         /etc/xdg/openbox/rc.xml && \
     # Make sure the main window is always in the background.
-    sed-patch '/<application type="normal" title="BitTyrant">/a \    <layer>below</layer>' \
+    sed-patch '/<application name="BitTyrant" class"*" type="normal">/a \    <layer>below</layer>' \
         /etc/xdg/openbox/rc.xml
 
 # Generate and install favicons.
