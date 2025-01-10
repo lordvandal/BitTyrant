@@ -1,11 +1,12 @@
 # Pull base image
-FROM jlesage/baseimage-gui:alpine-3.15
+FROM jlesage/baseimage-gui:alpine-3.21
 
 WORKDIR /
 
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
-    add-pkg openjdk11 curl bash gtk+2.0
+    add-pkg openjdk23 curl bash gtk+2.0
+#    add-pkg openjdk11 curl bash gtk+2.0
 
 # Change default shell from ash to bash
 RUN sed-patch 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
