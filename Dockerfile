@@ -5,7 +5,7 @@ WORKDIR /
 
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
-    add-pkg openjdk23 curl bash gtk+3.0
+    add-pkg openjdk21 curl bash gtk+3.0
 #    add-pkg openjdk11 curl bash gtk+2.0
 
 # Change default shell from ash to bash
