@@ -1,5 +1,5 @@
 # Pull base image
-FROM jlesage/baseimage-gui:alpine-3.21
+FROM jlesage/baseimage-gui:alpine-3.21-v4.6.7
 
 WORKDIR /
 
