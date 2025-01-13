@@ -23,7 +23,7 @@ COPY startapp.sh /startapp.sh
 RUN chmod +x /startapp.sh
 
 # Copy init.d file
-COPY bittyrant.sh /etc/cont-init.d/bittyrant.sh
+COPY 55-bittyrant.sh /etc/cont-init.d/55-bittyrant.sh
 RUN chmod +x /etc/cont-init.d/bittyrant.sh
 
 # Adjust the openbox config.
