@@ -5,7 +5,7 @@ WORKDIR /
 
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
-    add-pkg openjdk11 curl bash gtk+2.0
+    add-pkg openbox openjdk11 curl bash gtk+2.0
 
 # Change default shell from ash to bash
 RUN sed-patch 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
