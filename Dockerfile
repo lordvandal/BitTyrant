@@ -30,7 +30,7 @@ RUN chmod +x /etc/cont-init.d/bittyrant.sh
 RUN \
     # Maximize only the main/initial window.
     # sed-patch 's/<application type="normal">/<application type="normal" title="BitTyrant">/' \
-    sed-patch '\|</\applications>|i <application name="BitTyrant" class"*" type="normal">' \
+    sed-patch '\|<\/applications>|i <application name="BitTyrant" class"*" type="normal">' \
         /etc/xdg/openbox/rc.xml && \
     # Make sure the main window is always in the background.
     # sed-patch '/<application name="BitTyrant" class"*" type="normal">/a \    <layer>below</layer>' \
