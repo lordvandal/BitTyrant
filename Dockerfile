@@ -11,7 +11,9 @@ RUN echo "Installing OpenJDK..." && \
 RUN sed-patch 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
 
 # Change $HOME for USER app to /config
-RUN tac /etc/passwd | sed '1 s|/dev/null|/config|' | tac | sponge /etc/passwd
+RUN add-pkg moreutils && \
+    tac /etc/passwd | sed '1 s|/dev/null|/config|' | tac | sponge /etc/passwd && \
+    del-pkg moreutils
 
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
