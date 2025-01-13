@@ -31,7 +31,7 @@ RUN \
     sed-patch 's/<application type="normal">/<application type="normal" title="BitTyrant">/' \
         /etc/xdg/openbox/rc.xml && \
     # Make sure the main window is always in the background.
-    sed-patch '/<application name="BitTyrant" class"*" type="normal">/a \    <layer>below</layer>' \
+    sed-patch '/<application type="normal" title="BitTyrant">/a \    <layer>below</layer>' \
         /etc/xdg/openbox/rc.xml
 
 # Generate and install favicons.
