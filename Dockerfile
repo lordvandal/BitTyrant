@@ -10,6 +10,9 @@ RUN echo "Installing OpenJDK..." && \
 # Change default shell from ash to bash
 RUN sed-patch 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
 
+# Change $HOME for USER app to /config
+RUN tac bittyrant.passwd | sed '1 s|/dev/null|/config|' | tac | sponge bittyrant.passwd
+
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
     mkdir azureus && \
